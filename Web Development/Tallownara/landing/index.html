@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tallownara — Pure Tallow Skincare & Medicine</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">✦</span>
+        Tallownara
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about"        data-i18n="nav.about">About</a>
+        <a href="#products"     data-i18n="nav.products">Products</a>
+        <a href="#benefits"     data-i18n="nav.benefits">Benefits</a>
+        <a href="#process"      data-i18n="nav.process">Our Process</a>
+        <a href="#testimonials" data-i18n="nav.reviews">Reviews</a>
+        <a href="#contact" class="btn btn-nav" data-i18n="nav.order">Order Now</a>
+      </nav>
+      <!-- Language Switcher -->
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn" data-lang="id">ID</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <span class="hero-badge" data-i18n="hero.badge">100% Natural · Grass-Fed Tallow</span>
+      <h1 data-i18n-html="hero.h1">Pure Healing,<br /><em>From Nature's Core</em></h1>
+      <p class="hero-sub" data-i18n="hero.sub">
+        Tallownara crafts premium tallow-based skincare and medicinal products,
+        rendered from ethically sourced grass-fed beef — gentle enough for newborns,
+        powerful enough to truly heal.
+      </p>
+      <div class="hero-cta">
+        <a href="#products" class="btn btn-primary" data-i18n="hero.cta1">Explore Products</a>
+        <a href="https://shopee.co.id/tallownara_id" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="hero.cta2">🛍️ Shop on Shopee</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>100%</strong><span data-i18n="hero.stat1">Natural Ingredients</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>0</strong><span data-i18n="hero.stat2">Artificial Preservatives</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong data-i18n="hero.stat3val">Safe</strong><span data-i18n="hero.stat3">For Newborns</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span data-i18n="hero.scroll">Scroll to discover</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container about-grid">
+      <div class="about-image-wrap">
+        <!-- Filled dynamically from DB by script.js -->
+        <div class="about-slider" id="aboutSlider">
+          <!-- fallback shown until JS loads -->
+          <div class="placeholder-image large about-slider-fallback">
+            <div class="placeholder-label">
+              <span class="ph-icon">🐄</span>
+              <span data-i18n="about.imgLabel">Product / Brand Image</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-badge-card">
+          <span class="badge-icon">🌿</span>
+          <div>
+            <strong data-i18n="about.badgeTitle">Grass-Fed & Ethical</strong>
+            <small data-i18n="about.badgeSub">Sourced from local farms</small>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag" data-i18n="about.tag">About Tallownara</span>
+        <h2 data-i18n-html="about.h2">What Is <em>Tallow</em>,<br />and Why It Works</h2>
+        <p data-i18n="about.p1">
+          Tallow is rendered fat from cattle, used for centuries as one of nature's most
+          effective moisturizers. Its lipid profile closely mirrors the sebum our own skin
+          produces — making it uniquely compatible with human skin at a cellular level.
+        </p>
+        <p data-i18n="about.p2">
+          At Tallownara, we slow-render our tallow from grass-fed, pasture-raised cows
+          to preserve every beneficial fatty acid, fat-soluble vitamin (A, D, E, K),
+          and CLA that makes this ingredient so remarkable.
+        </p>
+        <div class="about-pillars">
+          <div class="pillar">
+            <span class="pillar-icon">🧴</span>
+            <div>
+              <strong data-i18n="about.p1title">Skin-Identical</strong>
+              <small  data-i18n="about.p1sub">Matches your skin's natural oils</small>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">💊</span>
+            <div>
+              <strong data-i18n="about.p2title">Medicinal Grade</strong>
+              <small  data-i18n="about.p2sub">Traditionally used for wound healing</small>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">👶</span>
+            <div>
+              <strong data-i18n="about.p3title">Baby-Safe</strong>
+              <small  data-i18n="about.p3sub">No chemicals, no fragrance</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="products section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="products.tag">Our Products</span>
+        <h2 data-i18n-html="products.h2">What We <em>Offer</em></h2>
+        <p data-i18n="products.sub">Every product is made in small batches with minimal ingredients — nothing more than what your skin actually needs.</p>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card featured">
+          <div class="product-badge" data-i18n="products.bestseller">Best Seller</div>
+          <div class="placeholder-image medium">
+            <div class="placeholder-label">
+              <span class="ph-icon">🫙</span>
+              <span>Pure Tallow Balm</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Pure Tallow Balm</h3>
+            <div class="product-rating-row">★★★★★</div>
+            <p data-i18n-product-en="0" class="product-desc">Our flagship product. Unscented, pure rendered tallow — a deeply nourishing moisturizer for face, body, and hands.</p>
+            <ul class="product-tags">
+              <li>60g</li>
+              <li>120g</li>
+              <li class="price-tag">Rp 00.000</li>
+              </ul>
+            <a href="https://shopee.co.id/tallownara_id" target="_blank" rel="noopener"
+               class="btn btn-primary btn-sm" data-i18n="products.order">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="placeholder-image medium">
+            <div class="placeholder-label">
+              <span class="ph-icon">👶</span>
+              <span>Baby Tallow Cream</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Baby Tallow Cream</h3>
+            <div class="product-rating-row">★★★★★</div>
+            <p data-i18n-product-en="1" class="product-desc">Extra-gentle formula specially made for newborn and infant skin — soothes diaper rash, cradle cap, and dry patches.</p>
+            <ul class="product-tags">
+              <li>60g</li>
+              <li class="price-tag">Rp 00.000</li>
+              </ul>
+            <a href="https://shopee.co.id/tallownara_id" target="_blank" rel="noopener"
+               class="btn btn-outline btn-sm" data-i18n="products.order">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="placeholder-image medium">
+            <div class="placeholder-label">
+              <span class="ph-icon">🩹</span>
+              <span>Healing Salve</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Healing Salve</h3>
+            <div class="product-rating-row">★★★★★</div>
+            <p data-i18n-product-en="2" class="product-desc">Medicinal-grade tallow blended with calendula and beeswax — formulated to accelerate wound healing, eczema, and burns.</p>
+            <ul class="product-tags">
+              <li>30g</li>
+              <li>60g</li>
+              <li class="price-tag">Rp 00.000</li>
+              </ul>
+            <a href="https://shopee.co.id/tallownara_id" target="_blank" rel="noopener"
+               class="btn btn-outline btn-sm" data-i18n="products.order">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="placeholder-image medium">
+            <div class="placeholder-label">
+              <span class="ph-icon">✨</span>
+              <span>Whipped Tallow</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Whipped Tallow</h3>
+            <div class="product-rating-row">★★★★★</div>
+            <p data-i18n-product-en="3" class="product-desc">Light, airy texture — same powerful benefits in a fluffy consistency that melts instantly on contact with the skin.</p>
+            <ul class="product-tags">
+              <li>80g</li>
+              <li class="price-tag">Rp 00.000</li>
+              </ul>
+            <a href="https://shopee.co.id/tallownara_id" target="_blank" rel="noopener"
+               class="btn btn-outline btn-sm" data-i18n="products.order">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFITS ===== -->
+  <section class="benefits section" id="benefits">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-tag" data-i18n="benefits.tag">Why Tallow?</span>
+        <h2 data-i18n-html="benefits.h2">Benefits You Can <em>Feel</em></h2>
+        <p data-i18n="benefits.sub">Ancient wisdom meets modern understanding. Tallow has been used across cultures for thousands of years — here's why science agrees.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🔬</div>
+          <h4 data-i18n="benefits.b1title">Biocompatible</h4>
+          <p  data-i18n="benefits.b1desc">Shares the same fat profile as human sebum — your skin absorbs it as if it were its own.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌾</div>
+          <h4 data-i18n="benefits.b2title">Rich in Vitamins</h4>
+          <p  data-i18n="benefits.b2desc">Naturally packed with fat-soluble vitamins A, D, E, and K — all essential for skin regeneration.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🛡️</div>
+          <h4 data-i18n="benefits.b3title">Barrier Repair</h4>
+          <p  data-i18n="benefits.b3desc">Restores and reinforces the skin's moisture barrier — reduces water loss and environmental damage.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌸</div>
+          <h4 data-i18n="benefits.b4title">Anti-Inflammatory</h4>
+          <p  data-i18n="benefits.b4desc">High CLA content helps calm redness, irritation, eczema, and sensitive skin conditions.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🚫</div>
+          <h4 data-i18n="benefits.b5title">No Toxins</h4>
+          <p  data-i18n="benefits.b5desc">No parabens, sulfates, synthetic fragrances, or preservatives — what you see is what you get.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">♻️</div>
+          <h4 data-i18n="benefits.b6title">Zero Waste</h4>
+          <p  data-i18n="benefits.b6desc">Using every part of the animal honors a tradition of respect and sustainability in our supply chain.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="process section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="process.tag">Our Process</span>
+        <h2 data-i18n-html="process.h2">From Farm to <em>Your Skin</em></h2>
+        <p data-i18n="process.sub">Every jar of Tallownara begins with care — from sourcing to rendering to the final product in your hands.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-image">
+            <div class="placeholder-image small">
+              <div class="placeholder-label">
+                <span class="ph-icon">🐄</span>
+                <span data-i18n="process.s1title">Ethical Sourcing</span>
+              </div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4 data-i18n="process.s1title">Ethical Sourcing</h4>
+            <p  data-i18n="process.s1desc">We partner with local grass-fed farms committed to humane, pasture-based practices. No hormones, no feedlots.</p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-image">
+            <div class="placeholder-image small">
+              <div class="placeholder-label">
+                <span class="ph-icon">🔥</span>
+                <span data-i18n="process.s2title">Slow Rendering</span>
+              </div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4 data-i18n="process.s2title">Slow Rendering</h4>
+            <p  data-i18n="process.s2desc">Raw suet is slow-rendered at low temperature to preserve all nutrients — no shortcuts, no bleaching.</p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-image">
+            <div class="placeholder-image small">
+              <div class="placeholder-label">
+                <span class="ph-icon">🧪</span>
+                <span data-i18n="process.s3title">Pure Filtering</span>
+              </div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4 data-i18n="process.s3title">Pure Filtering</h4>
+            <p  data-i18n="process.s3desc">Multi-stage filtering produces crystal-clear tallow — odorless, clean, and ready to blend into products.</p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-image">
+            <div class="placeholder-image small">
+              <div class="placeholder-label">
+                <span class="ph-icon">🫙</span>
+                <span data-i18n="process.s4title">Small-Batch Crafting</span>
+              </div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4 data-i18n="process.s4title">Small-Batch Crafting</h4>
+            <p  data-i18n="process.s4desc">Blended by hand in small batches. No mass production. Every jar is made with intention.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="testimonials.tag">What People Say</span>
+        <h2 data-i18n-html="testimonials.h2">Real Results, <em>Real Stories</em></h2>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Tulis ulasan pembeli di sini..."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">N</div>
+            <div>
+              <strong>Nama Pembeli</strong>
+              <small data-i18n="testimonials.t1loc">Pure Tallow Balm · Verified Customer</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / ORDER ===== -->
+  <section class="contact section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-text">
+        <span class="section-tag" data-i18n="contact.tag">Get In Touch</span>
+        <h2 data-i18n-html="contact.h2">Ready to Try <em>Tallownara?</em></h2>
+        <p data-i18n="contact.sub">Send us a message to place an order, ask questions, or find out which product is right for you. We respond within 24 hours.</p>
+        <div class="contact-channels">
+          <div class="channel">
+            <a href="https://wa.me/628158192911" target="_blank" rel="noopener" class="channel-link">
+              <span class="channel-icon channel-icon-brand" style="color:#25d366;">
+                <i class="fa-brands fa-whatsapp"></i>
+              </span>
+              <div>
+                <strong>WhatsApp</strong>
+                <small>+62 895-391-334-398</small>
+              </div>
+            </a>
+          </div>
+          <div class="channel">
+            <a href="https://www.instagram.com/tallownara" target="_blank" rel="noopener" class="channel-link">
+              <span class="channel-icon channel-icon-brand">
+                <i class="fa-brands fa-instagram"></i>
+              </span>
+              <div>
+                <strong>Instagram</strong>
+                <small>@tallownara</small>
+              </div>
+            </a>
+          </div>
+          <div class="channel">
+            <a href="https://shopee.co.id/tallownara_id" target="_blank" rel="noopener" class="channel-link">
+              <span class="channel-icon channel-icon-brand">
+                <img src="https://cdn.simpleicons.org/shopee/ee4d2d" alt="Shopee" class="social-icon-img" />
+              </span>
+              <div>
+                <strong>Shopee</strong>
+                <small>tallownara_id</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-i18n="contact.labelName">Your Name</label>
+              <input type="text" id="name" data-i18n-placeholder="contact.placeholderName" placeholder="e.g. Budi Santoso" required />
+            </div>
+            <div class="form-group">
+              <label for="phone" data-i18n="contact.labelPhone">WhatsApp / Phone</label>
+              <input type="tel" id="phone" placeholder="+62 812 xxxx xxxx" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="product" data-i18n="contact.labelProduct">Interested In</label>
+            <select id="product">
+              <option value="" data-i18n="contact.optDefault">Select a product...</option>
+              <option>Pure Tallow Balm</option>
+              <option>Baby Tallow Cream</option>
+              <option>Healing Salve</option>
+              <option>Whipped Tallow</option>
+              <option data-i18n="contact.optInfo">Just want information</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="contact.labelMessage">Message</label>
+            <textarea id="message" rows="4" data-i18n-placeholder="contact.placeholderMessage" placeholder="Tell us about your skin concerns or what you need..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" data-i18n="contact.send">Send Message</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <span>✓</span>
+          <strong data-i18n="contact.successTitle">Message sent!</strong>
+          <p data-i18n="contact.successSub">We'll get back to you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-icon">✦</span>
+          Tallownara
+        </a>
+        <p data-i18n-html="footer.tagline">Pure tallow products, handcrafted<br />with care for your skin and wellbeing.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/tallownara" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://shopee.co.id/tallownara_id" target="_blank" rel="noopener" aria-label="Shopee">
+            <img src="https://cdn.simpleicons.org/shopee/ffffff" alt="Shopee" class="social-icon-img" />
+          </a>
+          <a href="https://wa.me/628158192911" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <strong data-i18n="footer.col1title">Products</strong>
+          <a href="#products">Pure Tallow Balm</a>
+          <a href="#products">Baby Tallow Cream</a>
+          <a href="#products">Healing Salve</a>
+          <a href="#products">Whipped Tallow</a>
+        </div>
+        <div class="footer-col">
+          <strong data-i18n="footer.col2title">Company</strong>
+          <a href="#about"         data-i18n="footer.col2about">About Us</a>
+          <a href="#process"       data-i18n="footer.col2process">Our Process</a>
+          <a href="#benefits"      data-i18n="footer.col2benefits">Why Tallow</a>
+          <a href="#testimonials"  data-i18n="footer.col2reviews">Reviews</a>
+        </div>
+        <div class="footer-col">
+          <strong data-i18n="footer.col3title">Order</strong>
+          <a href="#contact"  data-i18n="footer.col3contact">Contact Us</a>
+          <a href="#"         data-i18n="footer.col3shipping">Shipping Info</a>
+          <a href="#">FAQ</a>
+          <a href="#"         data-i18n="footer.col3returns">Returns</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <small data-i18n="footer.copyright">© 2026 Tallownara. All rights reserved. Made with care.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+  <a href="https://wa.me/628158192911"
+     target="_blank"
+     rel="noopener"
+     class="wa-float"
+     aria-label="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-float-label" data-i18n="wa.label">Chat with us</span>
+  </a>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

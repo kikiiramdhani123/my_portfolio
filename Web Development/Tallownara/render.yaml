@@ -1,0 +1,22 @@
+databases:
+  - name: tallownara-db
+    databaseName: tallownara
+    user: tallownara
+    plan: free
+
+services:
+  - type: web
+    name: tallownara
+    runtime: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn server:app --workers 2 --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tallownara-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11.0

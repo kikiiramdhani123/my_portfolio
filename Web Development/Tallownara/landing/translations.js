@@ -1,0 +1,272 @@
+/* =============================================
+   TALLOWNARA — Translations
+   Supported: 'en' (English), 'id' (Bahasa Indonesia)
+   ============================================= */
+
+const TRANSLATIONS = {
+
+  en: {
+    /* --- Navbar --- */
+    'nav.about':    'About',
+    'nav.products': 'Products',
+    'nav.benefits': 'Benefits',
+    'nav.process':  'Our Process',
+    'nav.reviews':  'Reviews',
+    'nav.order':    'Order Now',
+
+    /* --- Hero --- */
+    'hero.badge':    '100% Natural · Grass-Fed Tallow',
+    'hero.h1':       'Pure Healing,<br /><em>From Nature\'s Core</em>',
+    'hero.sub':      'Tallownara crafts premium tallow-based skincare and medicinal products, rendered from ethically sourced grass-fed beef — gentle enough for newborns, powerful enough to truly heal.',
+    'hero.cta1':     'Explore Products',
+    'hero.cta2':     '🛍️ Shop on Shopee',
+    'hero.stat1':    'Natural Ingredients',
+    'hero.stat2':    'Artificial Preservatives',
+    'hero.stat3val': 'Safe',
+    'hero.stat3':    'For Newborns',
+    'hero.scroll':   'Scroll to discover',
+
+    /* --- About --- */
+    'about.tag':       'About Tallownara',
+    'about.h2':        'What Is <em>Tallow</em>,<br />and Why It Works',
+    'about.p1':        'Tallow is rendered fat from cattle, used for centuries as one of nature\'s most effective moisturizers. Its lipid profile closely mirrors the sebum our own skin produces — making it uniquely compatible with human skin at a cellular level.',
+    'about.p2':        'At Tallownara, we slow-render our tallow from grass-fed, pasture-raised cows to preserve every beneficial fatty acid, fat-soluble vitamin (A, D, E, K), and CLA that makes this ingredient so remarkable.',
+    'about.imgLabel':  'Product / Brand Image',
+    'about.badgeTitle':'Grass-Fed & Ethical',
+    'about.badgeSub':  'Sourced from local farms',
+    'about.p1title':   'Skin-Identical',
+    'about.p1sub':     'Matches your skin\'s natural oils',
+    'about.p2title':   'Medicinal Grade',
+    'about.p2sub':     'Traditionally used for wound healing',
+    'about.p3title':   'Baby-Safe',
+    'about.p3sub':     'No chemicals, no fragrance',
+
+    /* --- Products --- */
+    'products.tag':        'Our Products',
+    'products.h2':         'What We <em>Offer</em>',
+    'products.sub':        'Every product is made in small batches with minimal ingredients — nothing more than what your skin actually needs.',
+    'products.bestseller': 'Best Seller',
+    'products.order':      'Order Now',
+    'products.p1desc':     'Our flagship product. Unscented, pure rendered tallow — a deeply nourishing moisturizer for face, body, and hands.',
+    'products.p1tag1':     'All Skin Types',
+    'products.p1tag2':     'Unscented',
+    'products.p2desc':     'Extra-gentle formula specially made for newborn and infant skin — soothes diaper rash, cradle cap, and dry patches.',
+    'products.p2tag1':     'Newborn Safe',
+    'products.p2tag2':     'Fragrance-Free',
+    'products.p3name':     'Healing Salve',
+    'products.p3desc':     'Medicinal-grade tallow blended with calendula and beeswax — formulated to accelerate wound healing, eczema, and burns.',
+    'products.p3tag1':     'Wound Care',
+    'products.p3tag2':     'Eczema Relief',
+    'products.p4name':     'Whipped Tallow',
+    'products.p4desc':     'Light, airy texture — same powerful benefits in a fluffy consistency that melts instantly on contact with the skin.',
+    'products.p4tag1':     'Lightweight',
+    'products.p4tag2':     'Fast Absorb',
+
+    /* --- Benefits --- */
+    'benefits.tag':    'Why Tallow?',
+    'benefits.h2':     'Benefits You Can <em>Feel</em>',
+    'benefits.sub':    'Ancient wisdom meets modern understanding. Tallow has been used across cultures for thousands of years — here\'s why science agrees.',
+    'benefits.b1title':'Biocompatible',
+    'benefits.b1desc': 'Shares the same fat profile as human sebum — your skin absorbs it as if it were its own.',
+    'benefits.b2title':'Rich in Vitamins',
+    'benefits.b2desc': 'Naturally packed with fat-soluble vitamins A, D, E, and K — all essential for skin regeneration.',
+    'benefits.b3title':'Barrier Repair',
+    'benefits.b3desc': 'Restores and reinforces the skin\'s moisture barrier — reduces water loss and environmental damage.',
+    'benefits.b4title':'Anti-Inflammatory',
+    'benefits.b4desc': 'High CLA content helps calm redness, irritation, eczema, and sensitive skin conditions.',
+    'benefits.b5title':'No Toxins',
+    'benefits.b5desc': 'No parabens, sulfates, synthetic fragrances, or preservatives — what you see is what you get.',
+    'benefits.b6title':'Zero Waste',
+    'benefits.b6desc': 'Using every part of the animal honors a tradition of respect and sustainability in our supply chain.',
+
+    /* --- Process --- */
+    'process.tag':    'Our Process',
+    'process.h2':     'From Farm to <em>Your Skin</em>',
+    'process.sub':    'Every jar of Tallownara begins with care — from sourcing to rendering to the final product in your hands.',
+    'process.s1title':'Ethical Sourcing',
+    'process.s1desc': 'We partner with local grass-fed farms committed to humane, pasture-based practices. No hormones, no feedlots.',
+    'process.s2title':'Slow Rendering',
+    'process.s2desc': 'Raw suet is slow-rendered at low temperature to preserve all nutrients — no shortcuts, no bleaching.',
+    'process.s3title':'Pure Filtering',
+    'process.s3desc': 'Multi-stage filtering produces crystal-clear tallow — odorless, clean, and ready to blend into products.',
+    'process.s4title':'Small-Batch Crafting',
+    'process.s4desc': 'Blended by hand in small batches. No mass production. Every jar is made with intention.',
+
+    /* --- Testimonials --- */
+    'testimonials.tag':   'What People Say',
+    'testimonials.h2':    'Real Results, <em>Real Stories</em>',
+    'testimonials.t1text':'"I\'ve been struggling with eczema for years. After two weeks of using the Healing Salve, my skin finally has some relief. Nothing chemical has worked like this."',
+    'testimonials.t1loc': 'Jakarta · Verified Customer',
+    'testimonials.t2text':'"I put the Baby Tallow Cream on my 3-month-old for her diaper rash. Cleared up overnight. I was shocked — I had tried three other creams before this."',
+    'testimonials.t2loc': 'Bandung · Verified Customer',
+    'testimonials.t3text':'"The Pure Tallow Balm has replaced every moisturizer in my cabinet. My skin feels so deeply nourished — not greasy, just genuinely healthy."',
+    'testimonials.t3loc': 'Surabaya · Verified Customer',
+
+    /* --- Contact --- */
+    'contact.tag':              'Get In Touch',
+    'contact.h2':               'Ready to Try <em>Tallownara?</em>',
+    'contact.sub':              'Send us a message to place an order, ask questions, or find out which product is right for you. We respond within 24 hours.',
+    'contact.labelName':        'Your Name',
+    'contact.placeholderName':  'e.g. Budi Santoso',
+    'contact.labelPhone':       'WhatsApp / Phone',
+    'contact.labelProduct':     'Interested In',
+    'contact.optDefault':       'Select a product...',
+    'contact.optInfo':          'Just want information',
+    'contact.labelMessage':     'Message',
+    'contact.placeholderMessage':'Tell us about your skin concerns or what you need...',
+    'contact.send':             'Send Message',
+    'contact.successTitle':     'Message sent!',
+    'contact.successSub':       'We\'ll get back to you within 24 hours.',
+
+    /* --- Footer --- */
+    'footer.tagline':     'Pure tallow products, handcrafted<br />with care for your skin and wellbeing.',
+    'footer.col1title':   'Products',
+    'footer.col2title':   'Company',
+    'footer.col2about':   'About Us',
+    'footer.col2process': 'Our Process',
+    'footer.col2benefits':'Why Tallow',
+    'footer.col2reviews': 'Reviews',
+    'footer.col3title':   'Order',
+    'footer.col3contact': 'Contact Us',
+    'footer.col3shipping':'Shipping Info',
+    'footer.col3returns': 'Returns',
+    'footer.copyright':   '© 2026 Tallownara. All rights reserved. Made with care.',
+
+    /* --- WhatsApp Float --- */
+    'wa.label': 'Chat with us',
+  },
+
+  /* ==========================================
+     BAHASA INDONESIA
+     ========================================== */
+  id: {
+    /* --- Navbar --- */
+    'nav.about':    'Tentang',
+    'nav.products': 'Produk',
+    'nav.benefits': 'Manfaat',
+    'nav.process':  'Proses Kami',
+    'nav.reviews':  'Ulasan',
+    'nav.order':    'Pesan Sekarang',
+
+    /* --- Hero --- */
+    'hero.badge':    '100% Alami · Tallow Sapi Pemakan Rumput',
+    'hero.h1':       'Penyembuhan Murni,<br /><em>Dari Inti Alam</em>',
+    'hero.sub':      'Tallownara menghadirkan produk skincare dan obat berbahan tallow premium, diproses dari sapi pemakan rumput yang bersumber secara etis — cukup lembut untuk bayi baru lahir, cukup kuat untuk benar-benar menyembuhkan.',
+    'hero.cta1':     'Jelajahi Produk',
+    'hero.cta2':     '🛍️ Belanja di Shopee',
+    'hero.stat1':    'Bahan Alami',
+    'hero.stat2':    'Pengawet Buatan',
+    'hero.stat3val': 'Aman',
+    'hero.stat3':    'Untuk Bayi Baru Lahir',
+    'hero.scroll':   'Gulir untuk menemukan',
+
+    /* --- About --- */
+    'about.tag':       'Tentang Tallownara',
+    'about.h2':        'Apa Itu <em>Tallow</em>,<br />dan Mengapa Efektif',
+    'about.p1':        'Tallow adalah lemak sapi yang diproses, telah digunakan selama berabad-abad sebagai salah satu pelembap paling efektif dari alam. Profil lipidnya sangat mirip dengan sebum yang diproduksi kulit kita sendiri — sehingga unik dan cocok dengan kulit manusia di tingkat sel.',
+    'about.p2':        'Di Tallownara, kami memproses tallow secara perlahan dari sapi pemakan rumput untuk menjaga setiap asam lemak bermanfaat, vitamin larut lemak (A, D, E, K), dan CLA yang membuat bahan ini begitu luar biasa.',
+    'about.imgLabel':  'Gambar Produk / Brand',
+    'about.badgeTitle':'Sapi Pemakan Rumput & Etis',
+    'about.badgeSub':  'Bersumber dari peternakan lokal',
+    'about.p1title':   'Identik dengan Kulit',
+    'about.p1sub':     'Sesuai dengan minyak alami kulit Anda',
+    'about.p2title':   'Kualitas Medis',
+    'about.p2sub':     'Secara tradisional digunakan untuk penyembuhan luka',
+    'about.p3title':   'Aman untuk Bayi',
+    'about.p3sub':     'Tanpa bahan kimia, tanpa pewangi',
+
+    /* --- Products --- */
+    'products.tag':        'Produk Kami',
+    'products.h2':         'Apa yang Kami <em>Tawarkan</em>',
+    'products.sub':        'Setiap produk dibuat dalam jumlah kecil dengan bahan minimal — tidak lebih dari yang benar-benar dibutuhkan kulit Anda.',
+    'products.bestseller': 'Terlaris',
+    'products.order':      'Pesan Sekarang',
+    'products.p1desc':     'Produk unggulan kami. Tanpa wewangian, tallow murni yang diproses — pelembap yang sangat menutrisi untuk wajah, tubuh, dan tangan.',
+    'products.p1tag1':     'Semua Jenis Kulit',
+    'products.p1tag2':     'Tanpa Wewangian',
+    'products.p2desc':     'Formula sangat lembut yang khusus dibuat untuk kulit bayi baru lahir dan bayi — meredakan ruam popok, cradle cap, dan kulit kering.',
+    'products.p2tag1':     'Aman untuk Bayi Baru Lahir',
+    'products.p2tag2':     'Bebas Pewangi',
+    'products.p3name':     'Salep Penyembuh',
+    'products.p3desc':     'Tallow berkualitas medis yang dipadukan dengan calendula dan beeswax — diformulasikan untuk mempercepat penyembuhan luka, eksim, dan luka bakar.',
+    'products.p3tag1':     'Perawatan Luka',
+    'products.p3tag2':     'Meredakan Eksim',
+    'products.p4name':     'Tallow Kocok',
+    'products.p4desc':     'Tekstur ringan dan lembut — manfaat yang sama dalam konsistensi fluffy yang langsung meleleh saat menyentuh kulit.',
+    'products.p4tag1':     'Ringan',
+    'products.p4tag2':     'Penyerapan Cepat',
+
+    /* --- Benefits --- */
+    'benefits.tag':    'Mengapa Tallow?',
+    'benefits.h2':     'Manfaat yang Dapat Anda <em>Rasakan</em>',
+    'benefits.sub':    'Kebijaksanaan kuno bertemu pemahaman modern. Tallow telah digunakan di berbagai budaya selama ribuan tahun — inilah mengapa ilmu pengetahuan setuju.',
+    'benefits.b1title':'Biokompatibel',
+    'benefits.b1desc': 'Memiliki profil lemak yang sama dengan sebum manusia — kulit Anda menyerapnya seolah-olah miliknya sendiri.',
+    'benefits.b2title':'Kaya Vitamin',
+    'benefits.b2desc': 'Secara alami kaya vitamin larut lemak A, D, E, dan K — semua penting untuk regenerasi kulit.',
+    'benefits.b3title':'Perbaikan Pelindung Kulit',
+    'benefits.b3desc': 'Memulihkan dan memperkuat pelindung kelembapan kulit — mengurangi kehilangan air dan kerusakan akibat lingkungan.',
+    'benefits.b4title':'Anti-Inflamasi',
+    'benefits.b4desc': 'Kandungan CLA tinggi membantu meredakan kemerahan, iritasi, eksim, dan kondisi kulit sensitif.',
+    'benefits.b5title':'Tanpa Racun',
+    'benefits.b5desc': 'Tanpa paraben, sulfat, pewangi sintetis, atau pengawet — apa yang Anda lihat itulah yang Anda dapatkan.',
+    'benefits.b6title':'Tanpa Limbah',
+    'benefits.b6desc': 'Memanfaatkan setiap bagian hewan menghormati tradisi penghargaan dan keberlanjutan dalam rantai pasokan kami.',
+
+    /* --- Process --- */
+    'process.tag':    'Proses Kami',
+    'process.h2':     'Dari Peternakan ke <em>Kulit Anda</em>',
+    'process.sub':    'Setiap jar Tallownara dimulai dengan penuh perhatian — dari pengadaan hingga peleburan hingga produk jadi di tangan Anda.',
+    'process.s1title':'Sumber yang Etis',
+    'process.s1desc': 'Kami bermitra dengan peternakan lokal sapi pemakan rumput yang berkomitmen pada praktik manusiawi berbasis padang. Tanpa hormon, tanpa kandang sempit.',
+    'process.s2title':'Peleburan Lambat',
+    'process.s2desc': 'Suet mentah dileburkan secara perlahan pada suhu rendah untuk menjaga semua nutrisi — tanpa jalan pintas, tanpa pemutihan.',
+    'process.s3title':'Penyaringan Murni',
+    'process.s3desc': 'Penyaringan multi-tahap menghasilkan tallow jernih — tidak berbau, bersih, dan siap dicampur ke dalam produk.',
+    'process.s4title':'Pembuatan Jumlah Kecil',
+    'process.s4desc': 'Dicampur dengan tangan dalam jumlah kecil. Tanpa produksi massal. Setiap jar dibuat dengan penuh niat.',
+
+    /* --- Testimonials --- */
+    'testimonials.tag':   'Apa Kata Mereka',
+    'testimonials.h2':    'Hasil Nyata, <em>Cerita Nyata</em>',
+    'testimonials.t1text':'"Saya sudah berjuang dengan eksim selama bertahun-tahun. Setelah dua minggu menggunakan Salep Penyembuh, kulit saya akhirnya punya sedikit ketenangan. Tidak ada produk kimia yang bekerja seperti ini."',
+    'testimonials.t1loc': 'Jakarta · Pelanggan Terverifikasi',
+    'testimonials.t2text':'"Saya oleskan Baby Tallow Cream pada bayi saya yang berusia 3 bulan untuk ruam popoknya. Sembuh dalam semalam. Saya kaget — saya sudah mencoba tiga krim lain sebelum ini."',
+    'testimonials.t2loc': 'Bandung · Pelanggan Terverifikasi',
+    'testimonials.t3text':'"Pure Tallow Balm telah menggantikan setiap pelembap di lemari saya. Kulit saya terasa sangat bergizi — tidak berminyak, tapi benar-benar sehat."',
+    'testimonials.t3loc': 'Surabaya · Pelanggan Terverifikasi',
+
+    /* --- Contact --- */
+    'contact.tag':              'Hubungi Kami',
+    'contact.h2':               'Siap Mencoba <em>Tallownara?</em>',
+    'contact.sub':              'Kirim pesan untuk memesan, bertanya, atau mengetahui produk mana yang cocok untuk Anda. Kami membalas dalam 24 jam.',
+    'contact.labelName':        'Nama Anda',
+    'contact.placeholderName':  'mis. Budi Santoso',
+    'contact.labelPhone':       'WhatsApp / Telepon',
+    'contact.labelProduct':     'Tertarik Pada',
+    'contact.optDefault':       'Pilih produk...',
+    'contact.optInfo':          'Hanya ingin informasi',
+    'contact.labelMessage':     'Pesan',
+    'contact.placeholderMessage':'Ceritakan masalah kulit Anda atau apa yang Anda butuhkan...',
+    'contact.send':             'Kirim Pesan',
+    'contact.successTitle':     'Pesan terkirim!',
+    'contact.successSub':       'Kami akan membalas dalam 24 jam.',
+
+    /* --- Footer --- */
+    'footer.tagline':     'Produk tallow murni, dibuat dengan tangan<br />dengan penuh perhatian untuk kulit dan kesehatan Anda.',
+    'footer.col1title':   'Produk',
+    'footer.col2title':   'Perusahaan',
+    'footer.col2about':   'Tentang Kami',
+    'footer.col2process': 'Proses Kami',
+    'footer.col2benefits':'Mengapa Tallow',
+    'footer.col2reviews': 'Ulasan',
+    'footer.col3title':   'Pemesanan',
+    'footer.col3contact': 'Hubungi Kami',
+    'footer.col3shipping':'Info Pengiriman',
+    'footer.col3returns': 'Pengembalian',
+    'footer.copyright':   '© 2026 Tallownara. Hak cipta dilindungi. Dibuat dengan cinta.',
+
+    /* --- WhatsApp Float --- */
+    'wa.label': 'Chat dengan kami',
+  }
+};

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tallownara — Admin Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown:    #6b4c35;
+      --brown-dk: #4a3324;
+      --brown-lt: #d4b896;
+      --cream:    #faf7f2;
+      --border:   #e4e0d8;
+      --text:     #2a1f16;
+      --muted:    #8a7a6d;
+      --red:      #c0392b;
+      --green:    #2e7d4f;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background-image: radial-gradient(ellipse at 20% 50%, rgba(107,76,53,.07) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(212,184,150,.15) 0%, transparent 55%);
+    }
+
+    .login-wrap {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    /* ── Brand ── */
+    .brand {
+      text-align: center;
+    }
+    .brand-logo {
+      width: 64px; height: 64px;
+      background: var(--brown-dk);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: #fff;
+      margin: 0 auto 14px;
+      box-shadow: 0 8px 24px rgba(74,51,36,.25);
+    }
+    .brand h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--brown-dk);
+    }
+    .brand p {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ── Card ── */
+    .card {
+      width: 100%;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 32px rgba(0,0,0,.07);
+    }
+
+    .card h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    /* ── Alerts ── */
+    .alert {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 14px; border-radius: 8px;
+      font-size: .85rem; font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .alert-error   { background: #fdf0ef; color: var(--red);   border: 1px solid #f5c6c2; }
+    .alert-success { background: #edf7f1; color: var(--green); border: 1px solid #b7dfca; }
+
+    /* ── Form ── */
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 7px;
+    }
+    .input-wrap {
+      position: relative;
+    }
+    .input-wrap i {
+      position: absolute;
+      left: 14px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .input-wrap input {
+      width: 100%;
+      padding: 11px 14px 11px 40px;
+      border: 1.5px solid var(--border);
+      border-radius: 9px;
+      font-family: inherit;
+      font-size: .9rem;
+      color: var(--text);
+      background: var(--cream);
+      transition: border-color .15s, background .15s;
+      outline: none;
+    }
+    .input-wrap input:focus {
+      border-color: var(--brown);
+      background: #fff;
+    }
+    .input-wrap .toggle-pw {
+      position: absolute;
+      right: 12px; top: 50%;
+      transform: translateY(-50%);
+      background: none; border: none;
+      cursor: pointer; color: var(--muted);
+      font-size: .85rem; padding: 4px;
+    }
+    .input-wrap .toggle-pw:hover { color: var(--brown); }
+
+    .remember-row {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 22px;
+    }
+    .remember-row input[type="checkbox"] {
+      width: 16px; height: 16px;
+      accent-color: var(--brown);
+      cursor: pointer;
+    }
+    .remember-row label {
+      font-size: .85rem; color: var(--muted); cursor: pointer;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background: var(--brown-dk);
+      color: #fff;
+      border: none;
+      border-radius: 9px;
+      font-family: inherit;
+      font-size: .95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .15s, transform .1s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-login:hover    { background: var(--brown); }
+    .btn-login:active   { transform: scale(.98); }
+    .btn-login:disabled { opacity: .6; cursor: not-allowed; }
+
+    /* ── Footer ── */
+    .login-footer {
+      text-align: center;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+    .login-footer a {
+      color: var(--brown);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .login-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="login-wrap">
+
+  <!-- Brand -->
+  <div class="brand">
+    <div class="brand-logo">✦</div>
+    <h1>Tallownara</h1>
+    <p>Admin Panel</p>
+  </div>
+
+  <!-- Login card -->
+  <div class="card">
+    <h2>Sign in to your account</h2>
+
+    <!-- Error / success messages (driven by URL param) -->
+    <div id="alertBox" style="display:none;"></div>
+
+    <form method="POST" action="/admin/login" id="loginForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <div class="input-wrap">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" id="username" name="username"
+                 placeholder="Enter username" autocomplete="username"
+                 required autofocus />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-wrap">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="password" name="password"
+                 placeholder="Enter password" autocomplete="current-password"
+                 required />
+          <button type="button" class="toggle-pw" onclick="togglePassword()" tabindex="-1">
+            <i class="fa-solid fa-eye" id="eyeIcon"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="remember-row">
+        <input type="checkbox" id="remember" name="remember" />
+        <label for="remember">Remember me for 30 days</label>
+      </div>
+
+      <button type="submit" class="btn-login" id="loginBtn">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        Sign In
+      </button>
+    </form>
+  </div>
+
+  <div class="login-footer">
+    <a href="/" target="_blank">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> View landing page
+    </a>
+  </div>
+
+</div>
+
+<script>
+  // ── Show alert from URL param ──────────────────────────────────────────────
+  const params = new URLSearchParams(location.search);
+  const box    = document.getElementById('alertBox');
+
+  const messages = {
+    invalid:    { type: 'error',   icon: 'circle-xmark', text: 'Incorrect username or password. Please try again.' },
+    empty:      { type: 'error',   icon: 'circle-xmark', text: 'Please enter both username and password.' },
+    logged_out: { type: 'success', icon: 'circle-check', text: 'You have been signed out successfully.' },
+  };
+
+  const key = params.get('error') || params.get('msg');
+  if (key && messages[key]) {
+    const m = messages[key];
+    box.className = `alert alert-${m.type}`;
+    box.innerHTML = `<i class="fa-solid fa-${m.icon}"></i> ${m.text}`;
+    box.style.display = 'flex';
+  }
+
+  // ── Toggle password visibility ─────────────────────────────────────────────
+  function togglePassword() {
+    const input = document.getElementById('password');
+    const icon  = document.getElementById('eyeIcon');
+    const show  = input.type === 'password';
+    input.type  = show ? 'text' : 'password';
+    icon.className = show ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+  }
+
+  // ── Loading state on submit ────────────────────────────────────────────────
+  document.getElementById('loginForm').addEventListener('submit', () => {
+    const btn = document.getElementById('loginBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Signing in…';
+  });
+</script>
+</body>
+</html>

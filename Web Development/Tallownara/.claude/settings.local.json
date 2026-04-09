@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(pip show:*)",
+      "Bash(pip install:*)",
+      "Bash(curl -s http://localhost:5000/api/products)",
+      "Bash(python -c \":*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5000/uploads/product_1_570fb6f5.webp)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5000/uploads/product_2_2be4986a.webp)"
+    ]
+  }
+}
