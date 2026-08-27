@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+/* Palet hangat bertema kuliner — Design §6.4. Kontras teks ≥ 4.5:1. */
+@theme {
+  --color-latar: oklch(98.5% 0.006 75);
+  --color-permukaan: oklch(100% 0 0);
+  --color-permukaan-2: oklch(96.8% 0.008 75);
+  --color-garis: oklch(90% 0.012 75);
+  --color-teks: oklch(24% 0.02 60);
+  --color-teks-lembut: oklch(50% 0.02 60);
+  --color-aksen: oklch(62% 0.17 45);
+  --color-aksen-kuat: oklch(54% 0.18 42);
+  --color-aksen-lembut: oklch(95% 0.03 60);
+  --color-sukses: oklch(58% 0.14 155);
+  --color-bahaya: oklch(56% 0.19 27);
+  --color-peringatan: oklch(70% 0.15 75);
+
+  --radius-kartu: 0.875rem;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-latar: oklch(19% 0.012 60);
+    --color-permukaan: oklch(23% 0.014 60);
+    --color-permukaan-2: oklch(27% 0.016 60);
+    --color-garis: oklch(33% 0.018 60);
+    --color-teks: oklch(95% 0.008 75);
+    --color-teks-lembut: oklch(72% 0.014 70);
+    --color-aksen: oklch(70% 0.16 48);
+    --color-aksen-kuat: oklch(76% 0.15 50);
+    --color-aksen-lembut: oklch(30% 0.04 50);
+  }
+}
+
+* { -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  background: var(--color-latar);
+  color: var(--color-teks);
+  font-family: var(--font-sans);
+  overscroll-behavior-y: none;
+}
+
+body { min-height: 100dvh; }
+
+/* Target sentuh minimum 44 px pada layar kasir — Req 10.3 */
+.sentuh { min-height: 44px; min-width: 44px; }
+
+/* Angka sejajar rapi pada kolom harga */
+.angka { font-variant-numeric: tabular-nums; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-garis);
+  border-radius: 99px;
+}
+
+/* ── Struk 58 mm (Req 6.9) ── */
+@media print {
+  body * { visibility: hidden; }
+  #struk, #struk * { visibility: visible; }
+  #struk {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 58mm;
+    padding: 2mm;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #000;
+    background: #fff;
+  }
+  .tanpa-cetak { display: none !important; }
+}
+
+@keyframes masuk {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+.animasi-masuk { animation: masuk 0.18s ease-out; }
