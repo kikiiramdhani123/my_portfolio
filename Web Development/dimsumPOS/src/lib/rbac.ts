@@ -5,7 +5,7 @@ import { GalatAkses } from './galat';
 
 /** Requirement: 2.1–2.8 · Design §4 */
 
-export const KODE_HAK_AKSES = [
+const KODE_HAK_AKSES = [
   'DASBOR',
   'MASTER_BARANG',
   'MASTER_PEMASOK',
@@ -19,17 +19,17 @@ export const KODE_HAK_AKSES = [
   'PENGGUNA',
 ] as const;
 
-export type KodeHakAkses = (typeof KODE_HAK_AKSES)[number];
-export type Aksi = 'lihat' | 'tambah' | 'ubah' | 'hapus';
+type KodeHakAkses = (typeof KODE_HAK_AKSES)[number];
+type Aksi = 'lihat' | 'tambah' | 'ubah' | 'hapus';
 
-export interface Izin {
+interface Izin {
   lihat: boolean;
   tambah: boolean;
   ubah: boolean;
   hapus: boolean;
 }
 
-export type PetaIzin = Partial<Record<KodeHakAkses, Izin>>;
+type PetaIzin = Partial<Record<KodeHakAkses, Izin>>;
 
 interface BarisIzin {
   kode_hak_akses: KodeHakAkses;
@@ -74,13 +74,13 @@ export function punyaIzin(peta: PetaIzin, kode: KodeHakAkses, aksi: Aksi): boole
   return peta[kode]?.[aksi] === true;
 }
 
-export interface Konteks {
+interface Konteks {
   sesi: Sesi;
   izin: PetaIzin;
 }
 
 /** Ambil sesi + izin. Melempar GalatAkses(401) bila belum login. */
-export async function konteks(): Promise<Konteks> {
+async function konteks(): Promise<Konteks> {
   const sesi = await requireUser();
   return { sesi, izin: await muatIzin(sesi.idPengguna) };
 }
@@ -93,14 +93,6 @@ export async function requirePermission(kode: KodeHakAkses, aksi: Aksi): Promise
   const ktx = await konteks();
   if (!punyaIzin(ktx.izin, kode, aksi)) {
     throw new GalatAkses(403, `Akses ditolak: butuh hak ${kode}.${aksi}`);
-  }
-  return ktx;
-}
-
-export async function requireRole(namaPeran: string): Promise<Konteks> {
-  const ktx = await konteks();
-  if (!ktx.sesi.peran.includes(namaPeran)) {
-    throw new GalatAkses(403, `Akses ditolak: butuh peran ${namaPeran}`);
   }
   return ktx;
 }

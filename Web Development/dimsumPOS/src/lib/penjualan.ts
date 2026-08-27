@@ -8,14 +8,14 @@ import { GalatAplikasi } from './galat';
 
 /** Mesin penjualan — Requirement 6.5–6.14 · Design §3.2 & §3.4 */
 
-export interface InputBarisKeranjang {
+interface InputBarisKeranjang {
   idBarang: number | string;
   idSatuan: number | string;
   jumlah: string;
   diskonBaris?: string;
 }
 
-export interface InputPenjualan {
+interface InputPenjualan {
   detail: readonly InputBarisKeranjang[];
   metodePembayaran: 'TUNAI' | 'QRIS' | 'TRANSFER';
   jumlahBayar: string;
@@ -25,7 +25,7 @@ export interface InputPenjualan {
   idempotencyKey?: string | null;
 }
 
-export interface HasilPenjualan {
+interface HasilPenjualan {
   idPenjualan: string;
   nomorTransaksi: string;
   total: string;
@@ -46,7 +46,7 @@ interface BarisHargaJual {
  * Nomor transaksi harian `INV-YYYYMMDD-NNNN` (Req 6.8 · Design §3.4).
  * Advisory lock transaksional mencegah dua kasir mendapat nomor kembar.
  */
-export async function buatNomorTransaksi(klien: Klien): Promise<string> {
+async function buatNomorTransaksi(klien: Klien): Promise<string> {
   await klien.query("SELECT pg_advisory_xact_lock(hashtext('nomor_transaksi'))");
 
   const baris = await klien.satu<{ tanggal: string; urutan: string }>(

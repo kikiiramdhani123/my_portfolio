@@ -32,7 +32,7 @@ export async function hashSandi(sandi: string): Promise<string> {
   return bcrypt.hash(sandi, 10); // Req 1.5
 }
 
-export async function verifikasiSandi(sandi: string, hash: string): Promise<boolean> {
+async function verifikasiSandi(sandi: string, hash: string): Promise<boolean> {
   return bcrypt.compare(sandi, hash);
 }
 
@@ -73,8 +73,6 @@ export async function hapusSesi(): Promise<void> {
   (await cookies()).delete(NAMA_COOKIE);
 }
 
-export { GalatAkses };
-
 export async function requireUser(): Promise<Sesi> {
   const sesi = await bacaSesi();
   if (!sesi) throw new GalatAkses(401, 'Sesi tidak ditemukan atau kedaluwarsa.');
@@ -91,7 +89,7 @@ interface BarisPengguna {
   status_aktif: boolean;
 }
 
-export type HasilLogin =
+type HasilLogin =
   | { ok: true; sesi: Sesi }
   | { ok: false; pesan: string };
 
@@ -150,5 +148,3 @@ async function sedangDiblokir(username: string): Promise<boolean> {
   );
   return Number(baris?.gagal ?? '0') >= BATAS_GAGAL;
 }
-
-export const KONSTANTA_AUTH = { NAMA_COOKIE, UMUR_SESI_DETIK, BATAS_GAGAL, BLOKIR_MENIT };

@@ -6,7 +6,7 @@ import { GalatAkses, GalatAplikasi } from './galat';
 
 /** Pembungkus respons seragam: { data } | { error } — Design §5 & §7 */
 
-export { GalatAkses, GalatAplikasi };
+export { GalatAplikasi };
 
 export function sukses<T>(data: T, status = 200): NextResponse {
   return NextResponse.json({ data }, { status });

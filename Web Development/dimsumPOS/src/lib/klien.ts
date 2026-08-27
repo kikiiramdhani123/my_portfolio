@@ -2,7 +2,7 @@
 
 /** Pembungkus fetch sisi klien: selalu membaca bentuk { data } | { error }. */
 
-export class GalatApi extends Error {
+class GalatApi extends Error {
   constructor(pesan: string, readonly status: number, readonly detail?: unknown) {
     super(pesan);
     this.name = 'GalatApi';

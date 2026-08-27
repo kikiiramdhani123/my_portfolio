@@ -1,18 +1,18 @@
 import type { Klien } from './db';
-import { d, kali, tambah, kurang, jumlahkan, keUang, keKuantitas, type Desimal } from './money';
+import { d, kali, tambah, kurang, jumlahkan, keUang, keKuantitas } from './money';
 import { catatPergerakan } from './stok';
 import { GalatAplikasi } from './galat';
 
 /** Pembelian / barang masuk — Requirement 4.1–4.9 */
 
-export interface InputDetailPembelian {
+interface InputDetailPembelian {
   idBarang: number | string;
   idSatuan: number | string;
   jumlah: string;
   hargaBeliSatuan: string;
 }
 
-export interface InputPembelian {
+interface InputPembelian {
   nomorFaktur: string;
   tanggal?: string | null;
   idPemasok?: number | string | null;
@@ -28,7 +28,7 @@ interface BarisSatuanBarang {
   nama_barang: string;
 }
 
-export interface HasilPembelian {
+interface HasilPembelian {
   idPembelian: string;
   nomorFaktur: string;
   total: string;
@@ -188,9 +188,4 @@ export async function batalkanPembelian(
       WHERE id_pembelian = $1`,
     [idPembelian, `Dibatalkan: ${alasan}`],
   );
-}
-
-/** Total nilai pembelian pada rentang tanggal — dipakai laporan. */
-export function totalPembelian(nilai: readonly Desimal[]): Desimal {
-  return jumlahkan(nilai);
 }

@@ -2,13 +2,13 @@ import { query } from './db';
 
 /** Laporan & dasbor — Requirement 9.1–9.6 */
 
-export interface Rentang {
+interface Rentang {
   dari: string;
   sampai: string;
 }
 
 /** Rentang default: hari ini (WIB). */
-export function rentangHariIni(): Rentang {
+function rentangHariIni(): Rentang {
   const kini = new Date();
   const wib = new Date(kini.getTime() + 7 * 3_600_000);
   const tanggal = wib.toISOString().slice(0, 10);
@@ -26,7 +26,7 @@ const FILTER_TANGGAL = `
   AND tanggal_penjualan < (($2::date) + 1)::timestamp AT TIME ZONE 'Asia/Jakarta'
 `;
 
-export interface Ringkasan {
+interface Ringkasan {
   omzet: string;
   jumlah_transaksi: string;
   total_hpp: string;
@@ -68,7 +68,7 @@ export async function ringkasan(r: Rentang): Promise<Ringkasan> {
   return baris[0]!;
 }
 
-export interface TitikHarian {
+interface TitikHarian {
   tanggal: string;
   omzet: string;
   laba_kotor: string;
@@ -99,7 +99,7 @@ export async function penjualanHarian(r: Rentang): Promise<TitikHarian[]> {
   );
 }
 
-export interface BarisPenjualan {
+interface BarisPenjualan {
   id_penjualan: string;
   nomor_transaksi: string;
   tanggal_penjualan: string;
@@ -129,7 +129,7 @@ export async function laporanPenjualan(r: Rentang, batas = 500): Promise<BarisPe
   );
 }
 
-export interface BarisTerlaris {
+interface BarisTerlaris {
   id_barang: string;
   kode_barang: string;
   nama_barang: string;
@@ -155,7 +155,7 @@ export async function produkTerlaris(r: Rentang, batas = 20): Promise<BarisTerla
   );
 }
 
-export interface BarisLabaRugi {
+interface BarisLabaRugi {
   keterangan: string;
   nilai: string;
   jenis: 'PENDAPATAN' | 'HPP' | 'BIAYA' | 'TOTAL';
@@ -184,7 +184,7 @@ export async function labaRugi(r: Rentang): Promise<BarisLabaRugi[]> {
   ];
 }
 
-export interface BarisPembelianLaporan {
+interface BarisPembelianLaporan {
   id_pembelian: string;
   nomor_faktur_pembelian: string;
   tanggal_pembelian: string;
@@ -206,7 +206,7 @@ export async function laporanPembelian(r: Rentang): Promise<BarisPembelianLapora
   );
 }
 
-export interface BarisBiayaLaporan {
+interface BarisBiayaLaporan {
   id_biaya: string;
   tanggal_biaya: string;
   kategori_biaya: string;

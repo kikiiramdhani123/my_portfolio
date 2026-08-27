@@ -53,7 +53,7 @@ export async function bahanResepAktif(klien: Klien, idBarangHasil: string | numb
  * Deteksi siklus resep (Req 5.4): apakah `idBarangHasil` muncul kembali
  * saat menelusuri bahan-bahan `kandidatBahan` secara rekursif.
  */
-export async function deteksiSiklus(
+async function deteksiSiklus(
   klien: Klien,
   idBarangHasil: string,
   kandidatBahan: readonly string[],
@@ -90,14 +90,14 @@ export async function deteksiSiklus(
   return null;
 }
 
-export interface InputDetailResep {
+interface InputDetailResep {
   idBarangBahan: number | string;
   idSatuan: number | string;
   jumlah: string;
   catatan?: string | null;
 }
 
-export interface InputResep {
+interface InputResep {
   idBarangHasil: number | string;
   namaResep: string;
   tanggalBerlaku?: string | null;

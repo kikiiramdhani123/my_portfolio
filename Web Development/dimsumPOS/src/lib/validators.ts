@@ -134,8 +134,3 @@ export const skemaIzinPeran = z.object({
 export const skemaPengaturan = z.object({
   nilai: z.record(z.string(), z.string()),
 });
-
-export const skemaRentang = z.object({
-  dari: z.string().nullish(),
-  sampai: z.string().nullish(),
-});

@@ -2,7 +2,7 @@ import { query } from './db';
 
 /** Katalog layar kasir — Requirement 3.7, 6.1, 6.11 (tanpa HPP / harga beli). */
 
-export interface SatuanJual {
+interface SatuanJual {
   idSatuanBarang: string;
   idSatuan: string;
   kodeSatuan: string;
@@ -12,7 +12,7 @@ export interface SatuanJual {
   utama: boolean;
 }
 
-export interface ProdukKatalog {
+interface ProdukKatalog {
   idBarang: string;
   kodeBarang: string;
   namaBarang: string;

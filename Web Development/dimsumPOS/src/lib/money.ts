@@ -40,10 +40,6 @@ export function bagi(a: Desimal, b: Desimal): Desimal {
   return (a * FAKTOR) / b;
 }
 
-export const lebihBesar = (a: Desimal, b: Desimal): boolean => a > b;
-export const lebihKecil = (a: Desimal, b: Desimal): boolean => a < b;
-export const nol = (a: Desimal): boolean => a === 0n;
-export const negatif = (a: Desimal): boolean => a < 0n;
 export const maks = (a: Desimal, b: Desimal): Desimal => (a > b ? a : b);
 
 export function jumlahkan(nilai: readonly Desimal[]): Desimal {
@@ -66,7 +62,7 @@ export function bulatkan(nilai: Desimal, desimal: number): Desimal {
 export const bulatkanUang = (nilai: Desimal): Desimal => bulatkan(nilai, 2);
 
 /** Desimal → string siap dikirim ke PostgreSQL sebagai parameter NUMERIC. */
-export function keTeks(nilai: Desimal, desimal = SKALA): string {
+function keTeks(nilai: Desimal, desimal = SKALA): string {
   const dibulatkan = bulatkan(nilai, desimal);
   const negatifkan = dibulatkan < 0n;
   const absolut = negatifkan ? -dibulatkan : dibulatkan;
@@ -82,7 +78,7 @@ export const keUang = (nilai: Desimal): string => keTeks(nilai, 2);
 export const keKuantitas = (nilai: Desimal): string => keTeks(nilai, 6);
 
 /** Desimal → number. Hanya untuk tampilan/grafik, tidak pernah untuk perhitungan. */
-export const keAngka = (nilai: Desimal): number => Number(keTeks(nilai, 6));
+const keAngka = (nilai: Desimal): number => Number(keTeks(nilai, 6));
 
 /** "15000.00" → "Rp15.000" */
 export function formatRupiah(nilai: string | number | Desimal, tampilkanDesimal = false): string {
@@ -93,11 +89,4 @@ export function formatRupiah(nilai: string | number | Desimal, tampilkanDesimal 
     minimumFractionDigits: tampilkanDesimal ? 2 : 0,
     maximumFractionDigits: tampilkanDesimal ? 2 : 0,
   }).format(angka);
-}
-
-/** "2.500000" → "2,5" (buang nol berlebih di belakang koma) */
-export function formatKuantitas(nilai: string | number | Desimal): string {
-  const teks = keTeks(d(typeof nilai === 'bigint' ? keTeks(nilai) : nilai), 6);
-  const rapi = teks.includes('.') ? teks.replace(/0+$/, '').replace(/\.$/, '') : teks;
-  return rapi.replace('.', ',');
 }

@@ -8,7 +8,7 @@ import {
  * HPP memakai Weighted Average / rata-rata bergerak (Design §3.1).
  */
 
-export type JenisPergerakan =
+type JenisPergerakan =
   | 'PEMBELIAN'
   | 'BATAL_PEMBELIAN'
   | 'PENJUALAN'
@@ -17,7 +17,7 @@ export type JenisPergerakan =
   | 'PENYESUAIAN'
   | 'SALDO_AWAL';
 
-export interface PosisiStok {
+interface PosisiStok {
   /** Saldo dalam satuan dasar. */
   saldo: Desimal;
   /** Nilai persediaan total (Rp). */
@@ -64,12 +64,7 @@ export async function posisiStok(klien: Klien, idBarang: number | string): Promi
   };
 }
 
-/** HPP per satuan dasar saat ini. */
-export async function hppSaatIni(klien: Klien, idBarang: number | string): Promise<Desimal> {
-  return (await posisiStok(klien, idBarang)).hpp;
-}
-
-export interface InputPergerakan {
+interface InputPergerakan {
   idBarang: number | string;
   jenis: JenisPergerakan;
   referensiId?: number | string | null;
@@ -88,7 +83,7 @@ export interface InputPergerakan {
   catatan?: string | null;
 }
 
-export interface HasilPergerakan {
+interface HasilPergerakan {
   idPergerakan: string;
   /** HPP per satuan dasar setelah pergerakan ini. */
   hpp: Desimal;
@@ -157,7 +152,7 @@ export async function catatPergerakan(
   };
 }
 
-export interface RingkasanStokBarang {
+interface RingkasanStokBarang {
   id_barang: string;
   kode_barang: string;
   nama_barang: string;
@@ -197,7 +192,7 @@ export async function ringkasanStok(klien: Klien, cari?: string): Promise<Ringka
   );
 }
 
-export interface BarisKartuStok {
+interface BarisKartuStok {
   id_pergerakan_stok: string;
   tanggal_pergerakan: string;
   jenis_pergerakan: string;
