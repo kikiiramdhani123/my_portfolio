@@ -1,0 +1,16 @@
+# Rahasia
+.env
+
+# Data mentah (unduh sendiri dari Kaggle, lihat README)
+data/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Editor
+.vscode/
+.idea/

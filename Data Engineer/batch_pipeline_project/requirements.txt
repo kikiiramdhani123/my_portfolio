@@ -1,0 +1,6 @@
+pandas>=2.3.3
+SQLAlchemy>=2.0.43
+psycopg[binary]>=3.2.10
+python-dotenv>=1.1.0
+requests>=2.32.0
+pytest>=8.4.0
